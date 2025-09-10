@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+     //Quantifiers specify how many times a character or group should appear
+     let text="aaaba";
+     let pattern=/\a*/g;
+     let pattern2=/\a+/g;
+     let pattern3=/\a?/g;
+     let result=text.match(pattern);
+     let result2=text.match(pattern2);
+     let result3=text.match(pattern3);
+     console.log(result)
+     console.log(result2)
+     console.log(result3)
+     //modifiers(flag) change how regex matches.
+     //common modifiers:
+     //i->case insensitive
+     //g->global match(all occurances)
+     //m->multiline matchs
+
+     let sentence="Hai Hello\nHai,I'm Fine,"
+     let pattern4=/^\Hai+/igm;
+     let result5=sentence.match(pattern4);
+     console.log(result5)
+
+     //meta characters have special meaning in regex.
+     //common Meta Character:
+     //.->any character except newline
+     //\d->digit(0-9)
+     //\w->word character(letter,digits,-)
+     //\s->whitespace
+     //^->start of string/line
+     //$->end of string/line
+
+
+     let digitchar="js001java";
+     let pattern6=/\d+\w+/ig;
+     let result6=digitchar.match(pattern6);
+     console.log(result6);
+
+     //grouping
+     //Paranthesess()are used to group patterns and capture submatches.\
+
+     let username="itachi uchiha";
+     let pattern7=/(\w+)/g;
+     let result7=username.match(pattern7);
+     console.log(result7);
+     console.log(result7[0]);
+     console.log(result7[1]);
+
+     //methods
+     //Common Regex Methods in JavaScript:
+     //test()->return true or false
+     //exec()->return matched result with groups
+     //match()->return array of matches
+     //replace()->replace matches
+     //splite()->splite string using regex
+
+     let line="apple banana apple grape";
+     let pattern8=/apple/;
+     console.log(pattern8.test(line));
+     
+     let str="mr bean has a green apple and a red apple";
+     const regex=/apple/ig;
+     let result8=str.replace(regex, "strawberries");
+
+     console.log(result8);
+
+
+
+   </script>
+</body>
+</html>
